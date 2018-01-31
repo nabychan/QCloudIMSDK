@@ -1,6 +1,7 @@
 腾讯云IM的C#实现
 
- QCloudIMv4.CreateGroup(new CreateGroupRequest()
+
+           QCloudIMv4.CreateGroup(new CreateGroupRequest()
             {
                 Name = "TestGroup",
                 Type = "Public",
@@ -10,3 +11,4 @@
             {
                 GroupId = "id值"
             });
+            
