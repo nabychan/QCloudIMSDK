@@ -115,8 +115,9 @@ namespace QCloudIMSDK
             restrequest = new RestRequest(url, Method.POST);
             restrequest.AddHeader("Content-Type", "application/json"); //设置HTTP头
 
-            string jsonToSend = JsonConvert.SerializeObject(request);
-
+            var jSetting = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+            string jsonToSend = JsonConvert.SerializeObject(request, Formatting.Indented, jSetting);
+            
             restrequest.AddParameter("application/json; charset=utf-8", jsonToSend, "application/json;charset=UTF-8",
                 ParameterType.RequestBody);
             restrequest.RequestFormat = DataFormat.Json;
